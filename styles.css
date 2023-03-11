@@ -19,7 +19,9 @@
     flex: 1;
 }
 
-  .inactive {
+  .active-button {
+    width: 3px;
+    height: 3px;
   }
 
   .active {
