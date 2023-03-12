@@ -1,5 +1,5 @@
 //Set the number of boxes in the in the drawing-box
-let resolution = 20;
+let resolution = 30;
 
 const boxContainer = document.querySelector('.drawing-box');
 
@@ -16,15 +16,10 @@ for  (let i=0; i<resolution; i++){
     boxContainer.appendChild(columnBoxes);
 }
 
-function cellColor() {
-    this.classList.add('active');
-    this.style.background = 'blue';                                      
-}
-
 // Set up mutually exclusive color buttons
-const exclusiveBlackButton = document.querySelector('#black')
-const exclusiveRainbowButton = document.querySelector('#rainbow')
-const exclusiveEraseButton = document.querySelector('#erase')
+const exclusiveBlackButton = document.querySelector('.black')
+const exclusiveRainbowButton = document.querySelector('.rainbow')
+const exclusiveEraseButton = document.querySelector('.erase')
 exclusiveBlackButton.addEventListener('click', () => {
     inactivateButtons();
     exclusiveBlackButton.classList.add('active-button');
@@ -61,7 +56,22 @@ clear.addEventListener('click', () => {
     const activeBoxes = document.querySelectorAll('.active');
     for (let ii=0; ii<activeBoxes.length; ii++){
         activeBoxes[ii].classList.remove('active');
-        activeBoxes[ii].style.background = 'white';
+        activeBoxes[ii].style.background = 'none';
     };
 });
+
+// Cell Color Function
+function cellColor() {
+    const activeButtons = document.querySelectorAll('.active-button'); 
+    let rainbowColor = ['red', 'orange', 'yellow', 'green', 'blue', 'violet'];   
+    this.classList.add('active');                                 
+    if (activeButtons[0].classList.contains('black')) {
+        this.style.background = 'black'; 
+    } else if (activeButtons[0].classList.contains('rainbow')) {
+        this.style.background = rainbowColor[Math.floor(Math.random() * rainbowColor.length)]; 
+    } else {
+        this.style.background = 'none'; 
+    }
+}
+
 
