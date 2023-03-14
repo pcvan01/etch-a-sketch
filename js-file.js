@@ -1,19 +1,48 @@
-//Set the number of boxes in the in the drawing-box
-let resolution = 30;
+// Set Initial Resolution and Grid
+let resolution = 50;
+const resolutionOutput = document.querySelector('#report-resolution');
+resolutionOutput.innerHTML = resolution
+createGrid();
+ 
+// Set minus resolution button
+const minusResolution = document.querySelector('#minus-resolution')
+minusResolution.addEventListener('click', () => {
+    if (resolution > 10) {
+        resolution -= 10;
+    } else if (resolution == 10) {
+        resolution -= 9;
+    }
+    resolutionOutput.innerHTML = resolution;
+    createGrid();
+})
 
-const boxContainer = document.querySelector('.drawing-box');
+// Set plus resolution button
+const plusResolution = document.querySelector('#plus-resolution')
+plusResolution.addEventListener('click', () => {
+    if (resolution == 1) {
+        resolution += 9;
+    } else if (resolution <= 90) {
+        resolution += 10;
+    }
+    resolutionOutput.innerHTML = resolution;
+    createGrid();
+})
 
 // Set up the grid, add mouseover event listener for each cell
-for  (let i=0; i<resolution; i++){
-    const columnBoxes = document.createElement('div');
-    columnBoxes.classList.add('column-box');
-    for (let j=0; j<resolution; j++){
-        const rowBoxes = document.createElement('div');
-        rowBoxes.classList.add('row-box');
-        rowBoxes.addEventListener('mouseover', cellColor);
-        columnBoxes.appendChild(rowBoxes);
-    }
-    boxContainer.appendChild(columnBoxes);
+function createGrid() {
+    const boxContainer = document.querySelector('.drawing-box');
+    boxContainer.innerHTML = '';
+    for  (let i=0; i<resolution; i++){
+        const columnBoxes = document.createElement('div');
+        columnBoxes.classList.add('column-box');
+        for (let j=0; j<resolution; j++){
+            const rowBoxes = document.createElement('div');
+            rowBoxes.classList.add('row-box');
+            rowBoxes.addEventListener('mouseover', cellColor);
+            columnBoxes.appendChild(rowBoxes);
+        }
+        boxContainer.appendChild(columnBoxes);
+        }
 }
 
 // Set up mutually exclusive color buttons
@@ -73,5 +102,6 @@ function cellColor() {
         this.style.background = 'none'; 
     }
 }
+
 
 

@@ -1,28 +1,25 @@
 .drawing-box {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    height: 400px;
-    border-style: solid;
-    border-color: grey;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  border-style: solid;
+  border-color: grey;
 }
 
 .column-box {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 }
 
 .row-box {
-    border-style: solid;
-    border-color: black;
-    border-width: 0.05px;
-    flex: 1;
+  border-style: solid;
+  border-color: black;
+  border-width: 0.05px;
+  flex: 1;
 }
 
-  .active-button {
-    width: 3px;
-    height: 3px;
-  }
-
-  .active {
-  }
+.active-button {
+  width: 3px;
+  height: 3px;
+}
