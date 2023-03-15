@@ -1,8 +1,74 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin-left:50px;
+  min-width:500px;
+  max-width:600px;
+  padding:0px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 0.3rem;
+}
+
+.top-bar {
+  display: flex;
+  width: 450px;
+  justify-content: space-between;
+}
+
+.resolution {
+  display: flex;
+  align-items: center;
+}
+
+.resolution-button {
+  border-style: solid;
+  border-radius: 20px;
+  border-color: black;
+  border-width: 0.1px;
+  margin: 0.2rem;
+  font-size: 0.8rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  text-align: center;
+}
+
+button:hover {
+  opacity: 0.4;
+  transition: 0s;
+  background-color: darkgrey;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+#clear {
+  margin: 0.2rem;
+  padding: 0.3rem;
+  border-radius: 50px;
+  border-color: black;
+  border-width: 0.1px;
+  border-style: solid;
+}
+
+.pallette {
+  display: flex;
+  justify-content: center;
+}
 .drawing-box {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   border-style: solid;
   border-color: grey;
 }
@@ -19,7 +85,16 @@
   flex: 1;
 }
 
+.color-button {
+  font-size: 1rem;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 50px;
+  border-color: black;
+  border-width: 0.1px;
+  border-style: solid;
+}
+
 .active-button {
-  width: 3px;
-  height: 3px;
+  background-color: darkgray;
 }

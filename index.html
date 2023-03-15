@@ -9,13 +9,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="drawing-box"></div>
-    <button id="clear">Clear</button>
-    <button class="active-button black">Black</button>
-    <button class="inactive-button rainbow">Rainbow</button>
-    <button class="inactive-button erase">Eraser</button>
-    <button id="minus-resolution">-</button>
-    <div id="report-resolution"></div>
-    <button id="plus-resolution">+</button>
+    <div class="title">Etch-a-Sketch</div>
+    <div class="top-bar">
+        <div class="resolution">
+            <button class="resolution-button" id="minus-resolution">-</button>
+            <div id="report-resolution"></div>
+            <button class="resolution-button" id="plus-resolution">+</button>
+        </div>
+        <button id="clear">Clear</button>
+    </div>
+    <div class="pallette">
+        <div class="drawing-box"></div>
+    </div>
+    <div class="color-buttons">
+        <button class="active-button black color-button">Black</button>
+        <button class="inactive-button rainbow color-button">Rainbow</button>
+        <button class="inactive-button erase color-button">Eraser</button>    
+    </div>
+    
 </body>
 </html>
